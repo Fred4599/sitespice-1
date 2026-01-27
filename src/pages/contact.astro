@@ -1,0 +1,329 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact SiteSpice - Get in Touch">
+  <!-- Background Gradient -->
+  <div class="fixed inset-0 -z-20 bg-gradient-to-b from-purple-900/10 via-black to-black pointer-events-none"></div>
+
+  <!-- Technical Grid Overlay -->
+  <div class="fixed inset-0 pointer-events-none z-0 technical-grid opacity-30"></div>
+
+  <!-- Vertical Structure Lines -->
+  <div class="fixed inset-0 pointer-events-none z-0 max-w-[1400px] mx-auto border-x border-white/[0.04]">
+    <div class="absolute left-1/4 h-full w-px bg-white/[0.02]"></div>
+    <div class="absolute left-2/4 h-full w-px bg-white/[0.02]"></div>
+    <div class="absolute left-3/4 h-full w-px bg-white/[0.02]"></div>
+  </div>
+
+  <Navigation />
+
+  <main class="z-10 relative">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-6">
+      <div class="max-w-[1400px] mx-auto">
+        <div class="text-center mb-16 animate-on-scroll" style="animation: animationIn 0.8s ease-out forwards;">
+          <p class="text-purple-400 text-sm font-medium tracking-wider mb-4 uppercase">Get In Touch</p>
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+            Let's Build Something<br/>Amazing Together
+          </h1>
+          <p class="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto">
+            Ready to transform your online presence? Reach out and let's discuss how we can help grow your business.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-12 px-6">
+      <div class="max-w-[1200px] mx-auto">
+        <div class="grid lg:grid-cols-5 gap-12">
+          
+          <!-- Contact Info -->
+          <div class="lg:col-span-2 space-y-8 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.2s forwards; animation-play-state: paused;">
+            <div>
+              <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+              <p class="text-neutral-400 leading-relaxed">
+                Have a project in mind? Let's talk about how we can help you achieve your goals. We're here to answer any questions you might have.
+              </p>
+            </div>
+
+            <!-- Contact Cards -->
+            <div class="space-y-4">
+              <!-- Location -->
+              <div class="backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl p-6 hover:border-purple-500/30 transition-all group">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <iconify-icon icon="mdi:map-marker" class="text-2xl text-white"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">Location</h3>
+                    <p class="text-neutral-400 text-sm">Meridian, Idaho</p>
+                    <p class="text-neutral-500 text-xs mt-1">Serving clients nationwide</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl p-6 hover:border-purple-500/30 transition-all group">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <iconify-icon icon="mdi:email" class="text-2xl text-white"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">Email</h3>
+                    <a href="mailto:hello@sitespice.com" class="text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                      hello@sitespice.com
+                    </a>
+                    <p class="text-neutral-500 text-xs mt-1">We'll respond within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl p-6 hover:border-purple-500/30 transition-all group">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <iconify-icon icon="mdi:phone" class="text-2xl text-white"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">Phone</h3>
+                    <a href="tel:+12089997654" class="text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                      (208) 999-7654
+                    </a>
+                    <p class="text-neutral-500 text-xs mt-1">Mon-Fri, 9am-5pm MST</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="pt-4">
+              <h3 class="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">Follow Us</h3>
+              <div class="flex gap-3">
+                <a href="#" class="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.08] flex items-center justify-center hover:bg-purple-500/20 hover:border-purple-500/30 transition-all">
+                  <iconify-icon icon="mdi:facebook" class="text-lg text-neutral-400 hover:text-white"></iconify-icon>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.08] flex items-center justify-center hover:bg-purple-500/20 hover:border-purple-500/30 transition-all">
+                  <iconify-icon icon="mdi:instagram" class="text-lg text-neutral-400 hover:text-white"></iconify-icon>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.08] flex items-center justify-center hover:bg-purple-500/20 hover:border-purple-500/30 transition-all">
+                  <iconify-icon icon="mdi:linkedin" class="text-lg text-neutral-400 hover:text-white"></iconify-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="lg:col-span-3 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.3s forwards; animation-play-state: paused;">
+            <div class="backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-3xl p-8 md:p-12">
+              <h2 class="text-2xl font-bold mb-2">Send Us a Message</h2>
+              <p class="text-neutral-400 mb-8">Fill out the form below and we'll get back to you as soon as possible.</p>
+              
+              <form id="contact-form" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                  <!-- Name -->
+                  <div>
+                    <label for="name" class="block text-sm font-medium text-neutral-300 mb-2">Full Name *</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name" 
+                      required
+                      class="w-full px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  <!-- Email -->
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-neutral-300 mb-2">Email Address *</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      required
+                      class="w-full px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <!-- Phone -->
+                  <div>
+                    <label for="phone" class="block text-sm font-medium text-neutral-300 mb-2">Phone Number</label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone"
+                      class="w-full px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                      placeholder="(555) 123-4567"
+                    />
+                  </div>
+
+                  <!-- Service Interest -->
+                  <div>
+                    <label for="service" class="block text-sm font-medium text-neutral-300 mb-2">Service Interest</label>
+                    <select 
+                      id="service" 
+                      name="service"
+                      class="w-full px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-white focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all appearance-none cursor-pointer"
+                      style="background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23a855f7%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em;"
+                    >
+                      <option value="" class="bg-neutral-900">Select a service</option>
+                      <option value="website-design" class="bg-neutral-900">Website Design</option>
+                      <option value="seo" class="bg-neutral-900">SEO & Internet Marketing</option>
+                      <option value="graphic-design" class="bg-neutral-900">Graphic Design</option>
+                      <option value="web-hosting" class="bg-neutral-900">Web Hosting</option>
+                      <option value="other" class="bg-neutral-900">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Budget -->
+                <div>
+                  <label for="budget" class="block text-sm font-medium text-neutral-300 mb-2">Project Budget</label>
+                  <select 
+                    id="budget" 
+                    name="budget"
+                    class="w-full px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-white focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all appearance-none cursor-pointer"
+                    style="background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23a855f7%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em;"
+                  >
+                    <option value="" class="bg-neutral-900">Select budget range</option>
+                    <option value="under-1k" class="bg-neutral-900">Under $1,000</option>
+                    <option value="1k-5k" class="bg-neutral-900">$1,000 - $5,000</option>
+                    <option value="5k-10k" class="bg-neutral-900">$5,000 - $10,000</option>
+                    <option value="10k-25k" class="bg-neutral-900">$10,000 - $25,000</option>
+                    <option value="25k-plus" class="bg-neutral-900">$25,000+</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label for="message" class="block text-sm font-medium text-neutral-300 mb-2">Project Details *</label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    rows="5" 
+                    required
+                    class="w-full px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all resize-none"
+                    placeholder="Tell us about your project, goals, and timeline..."
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                  type="submit" 
+                  class="shiny-cta w-full magnetic-btn flex items-center justify-center gap-2"
+                >
+                  <span>Send Message</span>
+                  <iconify-icon icon="mdi:send" class="text-lg"></iconify-icon>
+                </button>
+
+                <!-- Form Note -->
+                <p class="text-center text-neutral-500 text-xs">
+                  By submitting this form, you agree to our privacy policy. We'll never share your information.
+                </p>
+              </form>
+
+              <!-- Success Message (hidden by default) -->
+              <div id="success-message" class="hidden text-center py-12">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mx-auto mb-6">
+                  <iconify-icon icon="mdi:check" class="text-4xl text-white"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Message Sent!</h3>
+                <p class="text-neutral-400">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 px-6">
+      <div class="max-w-[900px] mx-auto">
+        <div class="text-center mb-16 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.4s forwards; animation-play-state: paused;">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+          <p class="text-neutral-400">Quick answers to common questions about working with us.</p>
+        </div>
+
+        <div class="space-y-4 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.5s forwards; animation-play-state: paused;">
+          <!-- FAQ Item 1 -->
+          <details class="group backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <span class="font-semibold pr-4">How long does a typical project take?</span>
+              <iconify-icon icon="mdi:chevron-down" class="text-2xl text-purple-400 transition-transform group-open:rotate-180"></iconify-icon>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-400">
+              Project timelines vary based on scope and complexity. A simple website typically takes 2-4 weeks, while more complex projects with custom functionality may take 6-12 weeks. We'll provide a detailed timeline during our initial consultation.
+            </div>
+          </details>
+
+          <!-- FAQ Item 2 -->
+          <details class="group backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <span class="font-semibold pr-4">What's included in your SEO services?</span>
+              <iconify-icon icon="mdi:chevron-down" class="text-2xl text-purple-400 transition-transform group-open:rotate-180"></iconify-icon>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-400">
+              Our comprehensive SEO package includes keyword research, on-page optimization, technical SEO audits, content strategy, local SEO, link building, and monthly reporting. We go all-in with every client—one flat rate, full service.
+            </div>
+          </details>
+
+          <!-- FAQ Item 3 -->
+          <details class="group backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <span class="font-semibold pr-4">Do you work with clients outside of Idaho?</span>
+              <iconify-icon icon="mdi:chevron-down" class="text-2xl text-purple-400 transition-transform group-open:rotate-180"></iconify-icon>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-400">
+              Absolutely! While we're based in Meridian, Idaho, we work with clients across the entire United States. All of our services can be delivered remotely, and we use video calls, screen sharing, and collaborative tools to ensure seamless communication.
+            </div>
+          </details>
+
+          <!-- FAQ Item 4 -->
+          <details class="group backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <span class="font-semibold pr-4">What makes SiteSpice different from other agencies?</span>
+              <iconify-icon icon="mdi:chevron-down" class="text-2xl text-purple-400 transition-transform group-open:rotate-180"></iconify-icon>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-400">
+              At SiteSpice, you work directly with Braydon—no getting passed off to junior team members or overseas contractors. We believe in building real relationships with our clients and going all-in on every project. Personal attention, real results.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>
+
+<script>
+  // Form submission handling
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successMessage = document.getElementById('success-message');
+  
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    // Here you would typically send the data to your backend
+    // For now, we'll simulate a successful submission
+    console.log('Form submitted:', data);
+    
+    // Show success message
+    form.style.display = 'none';
+    successMessage?.classList.remove('hidden');
+    
+    // Scroll to success message
+    successMessage?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>

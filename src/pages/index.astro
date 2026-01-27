@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import LogoStrip from '../components/LogoStrip.astro';
+import TheSubstrate from '../components/TheSubstrate.astro';
+import Capabilities from '../components/Capabilities.astro';
+import Stats from '../components/Stats.astro';
+import Testimonials from '../components/Testimonials.astro';
+import VideoCTA from '../components/VideoCTA.astro';
+import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.astro';
+import { Component as EtheralShadow } from '@/components/ui/etheral-shadow';
+---
+
+<Layout>
+  <!-- Etheral Shadow Background -->
+  <div class="fixed inset-0 -z-30 w-full h-full overflow-hidden pointer-events-none">
+    <EtheralShadow 
+      client:load
+      color="rgba(128, 128, 128, 1)"
+      animation={{ scale: 100, speed: 90 }}
+      noise={{ opacity: 1, scale: 1.2 }}
+      sizing="fill"
+      showText={false}
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
+  </div>
+
+  <!-- Simplified Background Gradient (removed heavy UnicornStudio) -->
+  <div class="fixed inset-0 -z-20 bg-gradient-to-b from-purple-900/5 via-black to-black pointer-events-none"></div>
+
+  <!-- Technical Grid Overlay (Global) -->
+  <div class="fixed inset-0 pointer-events-none z-0 technical-grid opacity-30"></div>
+
+  <!-- Vertical Structure Lines -->
+  <div class="fixed inset-0 pointer-events-none z-0 max-w-[1400px] mx-auto border-x border-white/[0.04]">
+    <div class="absolute left-1/4 h-full w-px bg-white/[0.02]"></div>
+    <div class="absolute left-2/4 h-full w-px bg-white/[0.02]"></div>
+    <div class="absolute left-3/4 h-full w-px bg-white/[0.02]"></div>
+  </div>
+
+  <Navigation />
+
+  <main class="z-10 relative">
+    <Hero />
+    <LogoStrip />
+    <TheSubstrate />
+    <Testimonials />
+    <Capabilities />
+    <Stats />
+    <VideoCTA />
+    <Footer />
+  </main>
+</Layout>

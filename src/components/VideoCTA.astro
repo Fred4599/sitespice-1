@@ -1,0 +1,84 @@
+---
+---
+
+<section class="py-32 bg-black border-b border-white/5 relative">
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div class="relative z-10 w-full bg-black border border-white/10 rounded-3xl overflow-hidden min-h-[600px] flex flex-col items-center justify-center group isolate">
+      <!-- Background Video Card -->
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[80px] mix-blend-screen animate-pulse duration-[8s]"></div>
+        <video 
+          id="cta-video"
+          autoplay 
+          loop 
+          muted 
+          playsinline 
+          preload="none"
+          class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" 
+          style="filter: hue-rotate(240deg) contrast(1.2) saturate(1.2);">
+          <source src="https://cdn.coverr.co/videos/coverr-digital-lines-moving-background-4770/1080p.mp4" type="video/mp4">
+        </video>
+        <script is:inline>
+          // Lazy load CTA video when section is visible
+          if ('IntersectionObserver' in window) {
+            const ctaObserver = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  const video = document.getElementById('cta-video');
+                  if (video && video.preload === 'none') {
+                    video.preload = 'auto';
+                    video.load();
+                  }
+                  ctaObserver.disconnect();
+                }
+              });
+            }, { rootMargin: '200px' });
+            
+            const ctaSection = document.currentScript?.parentElement?.closest('section');
+            if (ctaSection) ctaObserver.observe(ctaSection);
+          }
+        </script>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 flex flex-col items-center text-center p-8 md:p-12 max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-2 mb-10 border border-purple-500/20 rounded-full bg-purple-900/10 backdrop-blur-xl shadow-[0_0_20px_rgba(168,85,247,0.1)]">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+          </span>
+          <span class="text-[10px] font-mono text-purple-200 uppercase tracking-widest">
+            Ready to Serve
+          </span>
+        </div>
+        <h2 class="text-5xl md:text-8xl font-medium tracking-tighter text-white mb-8 leading-[0.9]">
+          Get in Touch
+          <span class="text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-200 to-purple-400">
+            with Us
+          </span>
+        </h2>
+        <p class="text-neutral-400 text-lg font-light leading-relaxed max-w-lg mb-12">
+          Have a question or want to learn more about what we do? We're here to help you. 
+          Creating a website that works for you, and grows the business you've worked hard for.
+        </p>
+        
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <!-- Shiny CTA Button -->
+          <a href="https://sitespice.com/contact/" class="shiny-cta" style="--gradient-shine: #a855f7;">
+            <span>Contact Us</span>
+          </a>
+          
+          <div class="flex items-center gap-6">
+            <a href="https://sitespice.com/about/" class="group text-xs font-mono text-neutral-500 hover:text-white uppercase tracking-widest transition-colors flex items-center gap-2">
+              Learn More
+              <iconify-icon icon="ph:arrow-right" class="group-hover:translate-x-0.5 transition-transform"></iconify-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
