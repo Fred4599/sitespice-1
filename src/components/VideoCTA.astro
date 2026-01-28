@@ -40,7 +40,8 @@
         </script>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)]"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
-        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+        <!-- Noise overlay using CSS pattern instead of external SVG -->
+        <div class="absolute inset-0 opacity-20 mix-blend-overlay" style="background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 1px, transparent 1px, transparent 2px), repeating-linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 1px, transparent 1px, transparent 2px);"></div>
       </div>
 
       <!-- Content -->

@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Internet Marketing & SEO Services - SiteSpice | Digital Marketing Meridian Idaho">
+<Layout title="Internet Marketing & SEO Services - SiteSpice | Digital Marketing Meridian Idaho" description="SEO and internet marketing services at a flat rate. Drive targeted traffic that converts with our comprehensive, data-driven digital marketing solutions.">
   <!-- Hero Video Background -->
   <div class="fixed inset-0 -z-30 w-full h-full overflow-hidden pointer-events-none">
     <video 
@@ -327,7 +327,7 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <script>
-  // Lazy load video
+  // Lazy load video only when visible - removed forced 500ms timeout for better performance
   if ('IntersectionObserver' in window) {
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -338,18 +338,11 @@ import Footer from '../components/Footer.astro';
           videoObserver.unobserve(video);
         }
       });
-    }, { rootMargin: '50px' });
+    }, { rootMargin: '100px' });
     
     const serviceVideo = document.getElementById('service-hero-video');
     if (serviceVideo) {
       videoObserver.observe(serviceVideo);
-      setTimeout(() => {
-        const vid = serviceVideo as HTMLVideoElement;
-        if (vid.preload === 'none') {
-          vid.preload = 'auto';
-          vid.load();
-        }
-      }, 500);
     }
   }
 </script>

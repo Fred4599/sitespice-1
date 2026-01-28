@@ -2,29 +2,27 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import { Component as EtheralShadow } from '@/components/ui/etheral-shadow';
 ---
 
-<Layout title="About SiteSpice - Web Development & SEO by Braydon Carter">
-  <!-- Hero Video Background -->
+<Layout title="About SiteSpice - Web Development & SEO by Braydon Carter" description="Learn about SiteSpice founder Braydon Carter and our mission to help business professionals thrive online with personal, results-driven web design and SEO services.">
+  <!-- Etheral Shadow Background (lazy hydration for better LCP) -->
   <div class="fixed inset-0 -z-30 w-full h-full overflow-hidden pointer-events-none">
-    <video 
-      id="about-hero-video"
-      autoplay 
-      loop 
-      muted 
-      playsinline 
-      preload="none"
-      class="w-full h-full object-cover opacity-20 mix-blend-screen" 
-      style="filter: hue-rotate(150deg) contrast(1.2);">
-      <source src="https://cdn.coverr.co/videos/coverr-digital-lines-moving-background-4770/1080p.mp4" type="video/mp4">
-    </video>
+    <EtheralShadow 
+      client:idle
+      color="rgba(128, 128, 128, 1)"
+      animation={{ scale: 100, speed: 90 }}
+      noise={{ opacity: 1, scale: 1.2 }}
+      sizing="fill"
+      showText={false}
+    />
     <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
   </div>
 
   <!-- Background Gradient -->
   <div class="fixed inset-0 -z-20 bg-gradient-to-b from-purple-900/5 via-black to-black pointer-events-none"></div>
 
-  <!-- Technical Grid Overlay -->
+  <!-- Technical Grid Overlay (Global) -->
   <div class="fixed inset-0 pointer-events-none z-0 technical-grid opacity-30"></div>
 
   <!-- Vertical Structure Lines -->
@@ -38,89 +36,130 @@ import Footer from '../components/Footer.astro';
 
   <main class="z-10 relative">
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6">
+    <section class="relative pt-32 pb-24 md:pb-40 px-6 border-b border-white/5 overflow-hidden">
+      <!-- Lightweight gradient background replacing heavy UnicornStudio -->
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/8 rounded-full blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
+      </div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 -z-10"></div>
+      
       <div class="max-w-[1400px] mx-auto">
-        <div class="text-center mb-16 animate-on-scroll" style="animation: animationIn 0.8s ease-out forwards;">
-          <p class="text-purple-400 text-sm font-medium tracking-wider mb-4 uppercase">About SiteSpice</p>
-          <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
-            Web Development & SEO<br/>by Braydon Carter
-          </h1>
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-3 px-3 py-1.5 mb-10 border border-white/10 rounded-full bg-white/5 backdrop-blur-sm animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both]">
+            <div class="flex items-center gap-2 px-1">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+              </span>
+              <span class="text-[10px] font-mono text-purple-400 uppercase tracking-widest">
+                Our Story
+              </span>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -inset-x-20 -inset-y-10 bg-black/60 blur-[100px] rounded-full -z-10"></div>
+            <h1 class="animate-on-scroll [animation:animationIn_0.8s_ease-out_0.3s_both] text-5xl md:text-8xl font-medium tracking-tighter text-white leading-[0.9] mb-12 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+              Web Development & SEO<br/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-b from-white via-neutral-200 to-neutral-600">
+                by Braydon Carter
+              </span>
+            </h1>
+          </div>
+
+          <p class="text-lg text-neutral-400 max-w-xl leading-relaxed font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] animate-on-scroll [animation:animationIn_0.8s_ease-out_0.4s_both]">
+            SiteSpice began with a simple mission: to help business professionals who often say, "I'm just not techy," thrive in a digital world.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Origin Story Section -->
-    <section class="py-20 px-6">
-      <div class="max-w-[900px] mx-auto">
-        <div class="backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-3xl p-12 md:p-16 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.2s forwards; animation-play-state: paused;">
-          <div class="flex items-center gap-3 mb-8">
-            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-              <iconify-icon icon="mdi:origin" class="text-2xl text-white"></iconify-icon>
+    <section class="py-24 md:py-32 px-6 border-b border-white/5 relative overflow-hidden">
+      <div class="max-w-[1400px] mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both]">
+            <div class="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-6">The Genesis</div>
+            <h2 class="text-4xl md:text-6xl font-medium text-white tracking-tight mb-8">SiteSpice Origin</h2>
+            <div class="space-y-6 text-neutral-400 leading-relaxed text-lg font-light">
+              <p>
+                Founded by Braydon Carter, SiteSpice began with a simple mission: to help business professionals who often say, <span class="text-white font-normal">"I'm just not techy."</span>
+              </p>
+              <p>
+                What started as a focus on aesthetics quickly evolved when Braydon realized that good looks alone don't generate results. He began integrating software tools like forms, calendars, surveys, and automations to make sites work harder for business owners.
+              </p>
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold">SiteSpice Origin</h2>
           </div>
-          
-          <h3 class="text-2xl font-semibold mb-6 text-purple-300">Our Story</h3>
-          
-          <div class="space-y-6 text-neutral-300 leading-relaxed text-lg">
-            <p>
-              Founded by Braydon Carter, SiteSpice began with a simple mission: to help business professionals who often say, <span class="text-white font-medium">"I'm just not techy."</span>
-            </p>
-            <p>
-              What started as a focus on aesthetics—creating beautiful, eye-catching sites—quickly evolved when Braydon realized that good looks alone don't generate results. He began integrating software tools like forms, calendars, surveys, and automations to make sites work harder for business owners.
-            </p>
-            <p>
-              When clients faced the traffic problem—even well-built sites with great tools weren't getting seen—Braydon dove head-first into SEO, building a system that drives real results at a single flat rate because he believes in going all-in with clients.
-            </p>
+          <div class="relative animate-on-scroll [animation:animationIn_0.8s_ease-out_0.4s_both]">
+            <div class="aspect-square rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl p-1">
+              <div class="w-full h-full rounded-[22px] overflow-hidden bg-neutral-900 relative group">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <iconify-icon icon="ph:sparkle-fill" class="text-8xl text-white/10 group-hover:text-purple-500/20 transition-colors duration-700"></iconify-icon>
+                </div>
+                <div class="absolute bottom-8 left-8 right-8">
+                  <h3 class="text-2xl font-medium text-white mb-2">Our Story</h3>
+                  <p class="text-sm text-neutral-400">From aesthetics to results-driven systems.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative Elements -->
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-[80px]"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-[80px]"></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Values Section -->
-    <section class="py-20 px-6">
+    <section class="py-24 md:py-32 px-6 border-b border-white/5 bg-black/20">
       <div class="max-w-[1400px] mx-auto">
-        <div class="text-center mb-16 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.3s forwards; animation-play-state: paused;">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Values</h2>
-          <p class="text-neutral-400 text-lg">The core principles that guide our work and relationships.</p>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both]">
+          <div class="max-w-2xl">
+            <div class="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-6">Foundation</div>
+            <h2 class="text-4xl md:text-6xl font-medium text-white tracking-tight">Our Core Values</h2>
+          </div>
+          <p class="text-neutral-500 text-lg max-w-sm">The principles that guide our work and relationships.</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 spotlight-grid">
+        <div class="grid md:grid-cols-3 gap-1px bg-white/5 border border-white/5 rounded-3xl overflow-hidden spotlight-grid">
           <!-- Real Results -->
-          <div class="backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl p-8 spotlight-card relative animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.4s forwards; animation-play-state: paused;">
+          <div class="bg-black/40 backdrop-blur-xl p-10 spotlight-card relative group">
             <div class="relative z-10">
-              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6">
-                <iconify-icon icon="mdi:chart-line" class="text-3xl text-white"></iconify-icon>
+              <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 group-hover:border-purple-500/30 transition-colors">
+                <iconify-icon icon="ph:chart-line-up" class="text-2xl text-white/50 group-hover:text-purple-400 transition-colors"></iconify-icon>
               </div>
-              <h3 class="text-2xl font-bold mb-4">Real Results</h3>
-              <p class="text-neutral-300 leading-relaxed">
+              <h3 class="text-xl font-medium text-white mb-4">Real Results</h3>
+              <p class="text-neutral-500 leading-relaxed font-light">
                 We focus on delivering websites that not only look great but also drive measurable business results through strategic functionality.
               </p>
             </div>
           </div>
 
           <!-- Personal Relationships -->
-          <div class="backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl p-8 spotlight-card relative animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.5s forwards; animation-play-state: paused;">
+          <div class="bg-black/40 backdrop-blur-xl p-10 spotlight-card relative group">
             <div class="relative z-10">
-              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6">
-                <iconify-icon icon="mdi:handshake" class="text-3xl text-white"></iconify-icon>
+              <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 group-hover:border-purple-500/30 transition-colors">
+                <iconify-icon icon="ph:users-three" class="text-2xl text-white/50 group-hover:text-purple-400 transition-colors"></iconify-icon>
               </div>
-              <h3 class="text-2xl font-bold mb-4">Personal Relationships</h3>
-              <p class="text-neutral-300 leading-relaxed">
+              <h3 class="text-xl font-medium text-white mb-4">Personal Connection</h3>
+              <p class="text-neutral-500 leading-relaxed font-light">
                 We believe in real, personal relationships. You won't get handed off to an overseas team. Braydon meets and takes care of every client himself.
               </p>
             </div>
           </div>
 
           <!-- Going All-In -->
-          <div class="backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl p-8 spotlight-card relative animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.6s forwards; animation-play-state: paused;">
+          <div class="bg-black/40 backdrop-blur-xl p-10 spotlight-card relative group">
             <div class="relative z-10">
-              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6">
-                <iconify-icon icon="mdi:poker-chip" class="text-3xl text-white"></iconify-icon>
+              <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 group-hover:border-purple-500/30 transition-colors">
+                <iconify-icon icon="ph:infinity" class="text-2xl text-white/50 group-hover:text-purple-400 transition-colors"></iconify-icon>
               </div>
-              <h3 class="text-2xl font-bold mb-4">Going All-In</h3>
-              <p class="text-neutral-300 leading-relaxed">
-                We believe in going all-in with our clients. That's why we offer single, comprehensive packages rather than tiered services that limit what we can achieve together.
+              <h3 class="text-xl font-medium text-white mb-4">Going All-In</h3>
+              <p class="text-neutral-500 leading-relaxed font-light">
+                We believe in going all-in with our clients. That's why we offer single, comprehensive packages rather than tiered services.
               </p>
             </div>
           </div>
@@ -129,47 +168,36 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Meet Braydon Section -->
-    <section class="py-20 px-6">
-      <div class="max-w-[1200px] mx-auto">
-        <div class="backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-3xl overflow-hidden animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.7s forwards; animation-play-state: paused;">
-          <div class="grid md:grid-cols-2 gap-0">
-            <!-- Image Side -->
-            <div class="relative h-[400px] md:h-auto">
+    <section class="py-24 md:py-32 px-6 border-b border-white/5">
+      <div class="max-w-[1400px] mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="relative order-2 md:order-1 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both]">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl p-1">
               <img 
-                src="/assets/braydon-carter.jpg" 
+                src="/assets/braydon-carter.png" 
                 alt="Braydon Carter - Founder of SiteSpice" 
-                class="w-full h-full object-cover"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                class="w-full h-full object-cover rounded-[22px] grayscale hover:grayscale-0 transition-all duration-700"
+                loading="lazy"
+                decoding="async"
               />
-              <div class="hidden absolute inset-0 bg-gradient-to-br from-purple-900/30 to-purple-700/30 items-center justify-center">
-                <div class="w-32 h-32 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                  <iconify-icon icon="mdi:account" class="text-6xl text-white"></iconify-icon>
-                </div>
-              </div>
             </div>
+            <!-- Decorative Grid -->
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 technical-grid opacity-20 -z-10"></div>
+          </div>
 
-            <!-- Content Side -->
-            <div class="p-12 md:p-16">
-              <div class="flex items-center gap-3 mb-8">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                  <iconify-icon icon="mdi:account-star" class="text-2xl text-white"></iconify-icon>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold">Meet Braydon</h2>
-              </div>
-              
-              <p class="text-neutral-400 mb-6 text-sm uppercase tracking-wider">The founder behind SiteSpice's success.</p>
-              
-              <div class="space-y-6 text-neutral-300 leading-relaxed">
-                <p>
-                  I have worked as a speaker, coach, and consultant. Over the years, I have noticed a recurring pattern with business professionals: they often say, <span class="text-white font-medium">'I'm just not techy.'</span> I want to eliminate that mindset.
-                </p>
-                <p>
-                  I started in web design about five years ago. Initially, I focused purely on aesthetics—creating beautiful, eye-catching sites. But I quickly realized that good looks alone don't generate results.
-                </p>
-                <p>
-                  Today, I offer comprehensive SEO services at a single flat rate because I believe in going all-in with my clients. <span class="text-purple-300 font-semibold">One price, full service. That's how we win.</span>
-                </p>
-              </div>
+          <div class="order-1 md:order-2 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.4s_both]">
+            <div class="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-6">The Founder</div>
+            <h2 class="text-4xl md:text-6xl font-medium text-white tracking-tight mb-8">Meet Braydon</h2>
+            <div class="space-y-6 text-neutral-400 leading-relaxed text-lg font-light">
+              <p>
+                I have worked as a speaker, coach, and consultant. Over the years, I have noticed a recurring pattern: business professionals often feel held back by technology.
+              </p>
+              <p>
+                I started in web design five years ago. Initially, I focused purely on aesthetics. But I quickly realized that good looks alone don't generate results.
+              </p>
+              <p>
+                Today, I offer comprehensive SEO services at a single flat rate because I believe in going all-in with my clients. <span class="text-white font-normal italic">One price, full service. That's how we win together.</span>
+              </p>
             </div>
           </div>
         </div>
@@ -177,18 +205,19 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- CTA Section -->
-    <section class="py-32 px-6">
-      <div class="max-w-[900px] mx-auto text-center animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.8s forwards; animation-play-state: paused;">
-        <h2 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
-          Ready to Work Together?
+    <section class="py-32 md:py-48 px-6 text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-t from-purple-900/10 via-transparent to-transparent"></div>
+      <div class="max-w-3xl mx-auto relative z-10 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both]">
+        <h2 class="text-5xl md:text-8xl font-medium tracking-tighter text-white mb-8 leading-[0.9]">
+          Ready to Work
+          <span class="text-transparent bg-clip-text bg-gradient-to-b from-white via-neutral-200 to-neutral-600">
+            Together?
+          </span>
         </h2>
-        <p class="text-neutral-300 text-xl mb-12 leading-relaxed">
+        <p class="text-neutral-400 text-xl mb-12 font-light">
           Creating a website that works for you, and grows the business you've worked hard for.
         </p>
-        <a 
-          href="/contact" 
-          class="shiny-cta inline-block magnetic-btn"
-        >
+        <a href="/contact" class="shiny-cta inline-block">
           Get Started
         </a>
       </div>
@@ -198,31 +227,4 @@ import Footer from '../components/Footer.astro';
   </main>
 </Layout>
 
-<script>
-  // Lazy load video when page is ready
-  if ('IntersectionObserver' in window) {
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const video = entry.target as HTMLVideoElement;
-          video.preload = 'auto';
-          video.load();
-          videoObserver.unobserve(video);
-        }
-      });
-    }, { rootMargin: '50px' });
-    
-    const aboutVideo = document.getElementById('about-hero-video');
-    if (aboutVideo) {
-      videoObserver.observe(aboutVideo);
-      // Fallback: start loading after 500ms if still not visible
-      setTimeout(() => {
-        const vid = aboutVideo as HTMLVideoElement;
-        if (vid.preload === 'none') {
-          vid.preload = 'auto';
-          vid.load();
-        }
-      }, 500);
-    }
-  }
-</script>
+<!-- UnicornStudio removed for performance - using lightweight CSS animations instead -->

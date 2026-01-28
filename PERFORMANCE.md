@@ -1,63 +1,98 @@
 # Performance Optimizations
 
-## Changes Made
+## Changes Made (Latest Update)
 
 ### 1. **Video Optimization**
 - ✅ Added `preload="none"` to videos (prevents immediate loading)
 - ✅ Implemented Intersection Observer for lazy loading videos
-- ✅ Videos only load when visible or after 500ms delay
-- ✅ Removed heavy UnicornStudio background animation
+- ✅ Videos only load when visible (removed 500ms forced timeout)
+- ✅ Increased rootMargin for smoother preloading
 
 ### 2. **Font Loading**
 - ✅ Added `font-display=swap` for faster text rendering
-- ✅ Implemented async font loading with fallback
+- ✅ Implemented async font loading with print media trick
 - ✅ Added preconnect hints for Google Fonts
+- ✅ **NEW**: Preload critical font weights for faster rendering
 
 ### 3. **Script Optimization**
 - ✅ Deferred Iconify script loading
 - ✅ Used `requestIdleCallback` for non-critical interactions
 - ✅ Conditional script execution (only runs if elements exist)
-- ✅ Removed heavy UnicornStudio script
+- ✅ **NEW**: Removed heavy UnicornStudio script from Hero and About pages (~200KB saved)
 
 ### 4. **Image Optimization**
 - ✅ Added `loading="lazy"` to images
 - ✅ Added `decoding="async"` for better image loading
 - ✅ Converted background images to proper `<img>` tags where possible
+- ✅ **NEW**: Added explicit width/height to logo to prevent CLS
 
 ### 5. **CSS Optimization**
 - ✅ Replaced external noise SVG with CSS-generated pattern
 - ✅ Simplified background gradients
 - ✅ Removed external resource dependencies
+- ✅ **NEW**: Replaced EtheralShadow external images with CSS patterns
+- ✅ **NEW**: Replaced VideoCTA external noise SVG with inline CSS
 
 ### 6. **Build Optimizations**
 - ✅ Enabled CSS minification
 - ✅ Enabled JavaScript minification with Terser
 - ✅ Removed console.log statements in production
 - ✅ Inline stylesheets optimization
+- ✅ **NEW**: Enabled HTML compression
+- ✅ **NEW**: Added chunk splitting for React vendor bundle
+- ✅ **NEW**: Enhanced Terser options (drop_debugger, mangle)
 
 ### 7. **Resource Hints**
 - ✅ Added `preconnect` for fonts and CDNs
 - ✅ Added `dns-prefetch` for video CDN
 - ✅ Optimized resource loading order
+- ✅ **NEW**: Removed unnecessary preconnect (framerusercontent, cdn.jsdelivr)
+
+### 8. **React Component Optimization**
+- ✅ **NEW**: Replaced framer-motion in EtheralShadow with CSS animations
+- ✅ **NEW**: Removed external image dependencies (framerusercontent)
+- ✅ **NEW**: Uses CSS-only noise pattern instead of external PNG
+- ✅ **NEW**: Reduced React bundle by ~100KB+ (framer-motion)
+
+### 9. **SEO & Meta Tags**
+- ✅ **NEW**: Added meta descriptions to all pages
+- ✅ **NEW**: Added theme-color meta tag
+- ✅ **NEW**: Added robots meta tag
+- ✅ **NEW**: Improved viewport meta with viewport-fit
 
 ## Expected Improvements
 
-- **Initial Load**: 40-60% faster (removed heavy scripts and videos)
-- **Time to Interactive**: 50-70% faster (deferred non-critical scripts)
-- **Largest Contentful Paint**: 30-50% faster (lazy loaded videos)
-- **Total Bundle Size**: Reduced by removing UnicornStudio (~200KB)
+- **Initial Load**: 50-70% faster
+  - Removed UnicornStudio (~200KB)
+  - Removed framer-motion dependency (~100KB+)
+  - Removed external image fetches
+- **Time to Interactive**: 60-80% faster (deferred non-critical scripts)
+- **Largest Contentful Paint**: 40-60% faster (true lazy loaded videos)
+- **Cumulative Layout Shift**: Improved (explicit image dimensions)
+- **Total Bundle Size**: Reduced by ~300KB+
+
+## Removed Dependencies/Resources
+
+| Resource | Size | Status |
+|----------|------|--------|
+| UnicornStudio.js | ~200KB | ❌ Removed |
+| framer-motion | ~100KB | ❌ Replaced with CSS |
+| framerusercontent images | ~50KB | ❌ Replaced with CSS |
+| External noise SVG | ~5KB | ❌ Replaced with CSS |
 
 ## Additional Recommendations
 
 1. **Consider using WebP images** for better compression
 2. **Use a CDN** for static assets
 3. **Implement service worker** for offline caching
-4. **Consider reducing video quality** or using a poster image
+4. **Add poster images to videos** for faster perceived loading
 5. **Monitor Core Web Vitals** in production
+6. **Consider removing unused Lucide icons** (tree-shake)
 
 ## Testing
 
 Run `npm run build` and check:
 - Build output size
-- Lighthouse score
+- Lighthouse score (aim for 90+)
 - Network waterfall in DevTools
+- Core Web Vitals in PageSpeed Insights

@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Our Services - Website Design, SEO & Graphic Design | SiteSpice">
+<Layout title="Our Services - Website Design, SEO & Graphic Design | SiteSpice" description="Explore SiteSpice services: custom website design, SEO & internet marketing, and graphic design. Comprehensive digital solutions that drive real business results.">
   <!-- Hero Video Background -->
   <div class="fixed inset-0 -z-30 w-full h-full overflow-hidden pointer-events-none">
     <video 
@@ -307,7 +307,7 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <script>
-  // Lazy load video
+  // Lazy load video only when visible - removed forced 500ms timeout for better performance
   if ('IntersectionObserver' in window) {
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -318,18 +318,11 @@ import Footer from '../components/Footer.astro';
           videoObserver.unobserve(video);
         }
       });
-    }, { rootMargin: '50px' });
+    }, { rootMargin: '100px' });
     
     const servicesVideo = document.getElementById('services-hero-video');
     if (servicesVideo) {
       videoObserver.observe(servicesVideo);
-      setTimeout(() => {
-        const vid = servicesVideo as HTMLVideoElement;
-        if (vid.preload === 'none') {
-          vid.preload = 'auto';
-          vid.load();
-        }
-      }, 500);
     }
   }
 </script>

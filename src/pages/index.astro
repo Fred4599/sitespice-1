@@ -13,10 +13,10 @@ import { Component as EtheralShadow } from '@/components/ui/etheral-shadow';
 ---
 
 <Layout>
-  <!-- Etheral Shadow Background -->
+  <!-- Etheral Shadow Background (lazy hydration for better LCP) -->
   <div class="fixed inset-0 -z-30 w-full h-full overflow-hidden pointer-events-none">
     <EtheralShadow 
-      client:load
+      client:idle
       color="rgba(128, 128, 128, 1)"
       animation={{ scale: 100, speed: 90 }}
       noise={{ opacity: 1, scale: 1.2 }}
