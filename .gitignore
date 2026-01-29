@@ -1,6 +1,10 @@
 # build output
 dist/
 .output/
+.astro/
+
+# cache
+.npm-cache/
 
 # dependencies
 node_modules/

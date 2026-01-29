@@ -1,0 +1,83 @@
+---
+// Testimonials data - same as homepage
+const testimonials = [
+  {
+    quote: "He does such an amazing job explaining how all the intricate details about SEO actually work and he gets the best results I've seen in the industry hands down.",
+    name: "Angelo A.",
+    role: "Agency Owner",
+    initials: "AA"
+  },
+  {
+    quote: "With his work on our site he has increased our number of bridal appointments. Would highly recommend to anyone!",
+    name: "Heather C.",
+    role: "Bridal Shop Owner",
+    initials: "HC"
+  },
+  {
+    quote: "He has completely transformed my website, ensuring it connects with the right audience through amazing SEO and seamless automation.",
+    name: "Heather J.",
+    role: "Holistic Practitioner",
+    initials: "HJ"
+  }
+];
+---
+
+<section class="py-20 px-6 border-t border-white/5">
+  <div class="max-w-[1200px] mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.8s forwards; animation-play-state: paused;">
+      <p class="text-xs uppercase text-neutral-500 tracking-widest mb-4 font-mono">
+        Client Success Stories
+      </p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        What Our Clients
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-200">
+          Say
+        </span>
+      </h2>
+      <p class="text-neutral-400 text-lg max-w-xl mx-auto">
+        Real results from real business owners who trusted us with their digital presence.
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid md:grid-cols-3 gap-6 spotlight-grid">
+      {testimonials.map((testimonial, index) => (
+        <div 
+          class="group backdrop-blur-xl bg-white/[0.02] border border-white/[0.08] rounded-2xl p-8 hover:border-purple-500/30 transition-all spotlight-card relative animate-on-scroll"
+          style={`animation: animationIn 0.8s ease-out ${0.9 + index * 0.1}s forwards; animation-play-state: paused;`}
+        >
+          <!-- Quote Icon -->
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-700/10 flex items-center justify-center mb-6 border border-purple-500/20">
+            <iconify-icon icon="ph:quotes" class="text-xl text-purple-400"></iconify-icon>
+          </div>
+
+          <!-- Quote Text -->
+          <p class="text-neutral-300 leading-relaxed mb-6 text-[15px]">
+            "{testimonial.quote}"
+          </p>
+
+          <!-- Author -->
+          <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-xs font-bold text-white">
+              {testimonial.initials}
+            </div>
+            <div>
+              <div class="text-sm font-medium text-white">
+                {testimonial.name}
+              </div>
+              <div class="text-xs text-neutral-500 font-mono">
+                {testimonial.role}
+              </div>
+            </div>
+            <div class="ml-auto flex items-center gap-1">
+              {[...Array(5)].map(() => (
+                <iconify-icon icon="ph:star-fill" class="text-amber-400 text-sm"></iconify-icon>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
