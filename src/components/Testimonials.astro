@@ -1,13 +1,13 @@
 ---
 ---
 
-<section class="sm:py-24 [animation:fadeSlideIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate pt-16 pb-16 border-b border-white/5 bg-black overflow-hidden"
+<section class="sm:py-24 [animation:fadeSlideIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate pt-16 pb-16 border-b border-white/5 bg-black"
   data-element-locator="html > body:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(5)">
-  <div class="mb-12 text-center">
+  <div class="mb-12 text-center px-6">
     <p class="text-xs uppercase text-neutral-500 tracking-widest mb-2 font-mono">
       Featured Reviews
     </p>
-    <h2 class="text-3xl md:text-5xl font-medium tracking-tighter text-white leading-[0.9] whitespace-nowrap">
+    <h2 class="text-3xl md:text-5xl font-medium tracking-tighter text-white leading-[0.9]">
         See What 
         <span class="text-transparent bg-clip-text bg-gradient-to-br from-white via-neutral-200 to-neutral-500">
           They Say
@@ -18,16 +18,16 @@
   <!-- Scrollable container with original stacked design -->
   <div class="relative py-12 sm:py-20" style="min-height: 450px;">
     <!-- Fade edges -->
-    <div class="absolute left-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none"></div>
+    <div class="absolute left-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none"></div>
     
     <!-- Scrollable area -->
-    <div class="overflow-x-auto scrollbar-hide" style="-webkit-overflow-scrolling: touch;">
-      <div class="flex items-center justify-start sm:justify-center py-8" style="min-width: max-content; padding-left: 60px; padding-right: 60px;">
+    <div class="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing" style="-webkit-overflow-scrolling: touch;">
+      <div class="flex items-center py-8" style="width: max-content; padding-left: 100px; padding-right: 100px;">
         
         <!-- Testimonial 1 -->
         <div class="glass flex-shrink-0"
-          style="position: relative; width: 340px; height: 340px; background: linear-gradient(rgba(255, 255, 255, 0.1), transparent); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: rgba(0, 0, 0, 0.1) 0px 25px 25px; display: flex; justify-content: center; align-items: center; border-radius: 1rem; margin: 0px -50px; backdrop-filter: blur(10px); transform: rotate(-10deg);">
+          style="position: relative; width: 340px; height: 340px; background: linear-gradient(rgba(255, 255, 255, 0.1), transparent); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: rgba(0, 0, 0, 0.1) 0px 25px 25px; display: flex; justify-content: center; align-items: center; border-radius: 1rem; margin-right: 40px; backdrop-filter: blur(10px); transform: rotate(-10deg);">
           <div
             class="absolute inset-4 rounded-xl bg-white text-neutral-900 shadow-2xl ring-1 ring-neutral-200 overflow-hidden">
             <div class="p-6">
@@ -75,7 +75,7 @@
 
         <!-- Testimonial 2 -->
         <div class="glass flex-shrink-0"
-          style="position: relative; width: 340px; height: 340px; background: linear-gradient(rgba(255, 255, 255, 0.08), transparent); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: rgba(0, 0, 0, 0.1) 0px 25px 25px; display: flex; justify-content: center; align-items: center; border-radius: 1rem; margin: 0px -50px; backdrop-filter: blur(10px); transform: rotate(-6deg); z-index: 1;">
+          style="position: relative; width: 340px; height: 340px; background: linear-gradient(rgba(255, 255, 255, 0.08), transparent); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: rgba(0, 0, 0, 0.1) 0px 25px 25px; display: flex; justify-content: center; align-items: center; border-radius: 1rem; margin-right: 40px; backdrop-filter: blur(10px); transform: rotate(-6deg); z-index: 1;">
           <div
             class="absolute inset-4 rounded-xl bg-white/90 text-neutral-900 shadow-xl ring-1 ring-neutral-200 backdrop-blur overflow-hidden">
             <div class="p-6">
@@ -123,7 +123,7 @@
 
         <!-- Testimonial 3 -->
         <div class="glass flex-shrink-0"
-          style="position: relative; width: 340px; height: 340px; background: linear-gradient(rgba(255, 255, 255, 0.06), transparent); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: rgba(0, 0, 0, 0.1) 0px 25px 25px; display: flex; justify-content: center; align-items: center; border-radius: 1rem; margin: 0px -50px; backdrop-filter: blur(10px); transform: rotate(0deg); z-index: 2;">
+          style="position: relative; width: 340px; height: 340px; background: linear-gradient(rgba(255, 255, 255, 0.06), transparent); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: rgba(0, 0, 0, 0.1) 0px 25px 25px; display: flex; justify-content: center; align-items: center; border-radius: 1rem; backdrop-filter: blur(10px); transform: rotate(0deg); z-index: 2;">
           <div
             class="absolute inset-4 rounded-xl bg-white/80 text-neutral-900 shadow-lg ring-1 ring-neutral-200 backdrop-blur overflow-hidden">
             <div class="p-6">
@@ -172,14 +172,14 @@
       </div>
     </div>
     
-    <!-- Scroll hint for mobile -->
-    <div class="flex justify-center mt-2 sm:hidden">
+    <!-- Scroll hint -->
+    <div class="flex justify-center mt-4">
       <div class="text-xs text-neutral-500 flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14"></path>
-          <path d="m12 5 7 7-7 7"></path>
+          <path d="M18 8L22 12L18 16"></path>
+          <path d="M6 8L2 12L6 16"></path>
         </svg>
-        <span>Swipe</span>
+        <span>Drag to scroll</span>
       </div>
     </div>
   </div>
@@ -193,4 +193,36 @@
       display: none;
     }
   </style>
+
+  <script>
+    // Enable drag-to-scroll functionality
+    const scrollContainer = document.querySelector('.scrollbar-hide');
+    if (scrollContainer) {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      scrollContainer.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+      });
+
+      scrollContainer.addEventListener('mouseleave', () => {
+        isDown = false;
+      });
+
+      scrollContainer.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+
+      scrollContainer.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollContainer.scrollLeft = scrollLeft - walk;
+      });
+    }
+  </script>
 </section>
