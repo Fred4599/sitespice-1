@@ -19,6 +19,7 @@
 - ✅ Used `requestIdleCallback` for non-critical interactions
 - ✅ Conditional script execution (only runs if elements exist)
 - ✅ **NEW**: Removed heavy UnicornStudio script from Hero and About pages (~200KB saved)
+- ✅ **NEW**: Aurora background uses pure WebGL (no Three.js dependency - saves ~500KB)
 
 ### 4. **Image Optimization**
 - ✅ Added `loading="lazy"` to images
@@ -53,6 +54,16 @@
 - ✅ **NEW**: Removed external image dependencies (framerusercontent)
 - ✅ **NEW**: Uses CSS-only noise pattern instead of external PNG
 - ✅ **NEW**: Reduced React bundle by ~100KB+ (framer-motion)
+
+### 10. **Aurora Background Optimization**
+- ✅ **NEW**: Pure WebGL implementation (no Three.js - saves ~500KB)
+- ✅ **NEW**: Lazy initialization via `requestIdleCallback`
+- ✅ **NEW**: IntersectionObserver pauses animation when not visible
+- ✅ **NEW**: Reduced canvas resolution (0.4x mobile, 0.6x desktop)
+- ✅ **NEW**: FPS capped at 24fps (mobile) / 30fps (desktop)
+- ✅ **NEW**: Reduced shader iterations (20 vs 35 original)
+- ✅ **NEW**: Low-power WebGL context preference
+- ✅ **NEW**: Graceful fallback to CSS gradient if WebGL unavailable
 
 ### 9. **SEO & Meta Tags**
 - ✅ **NEW**: Added meta descriptions to all pages
