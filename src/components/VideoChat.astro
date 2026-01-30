@@ -1,0 +1,100 @@
+---
+// VideoChat.astro - Floating LiveAvatar video chat widget
+---
+
+<div id="video-chat-container" class="fixed bottom-6 right-6 z-50">
+  <!-- Toggle Button -->
+  <button 
+    id="video-chat-toggle"
+    class="w-14 h-14 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg shadow-purple-500/30 flex items-center justify-center hover:scale-110 transition-transform duration-300 group"
+    aria-label="Open video chat"
+  >
+    <svg 
+      id="chat-icon" 
+      class="w-6 h-6 text-white transition-transform duration-300" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+    </svg>
+    <svg 
+      id="close-icon" 
+      class="w-6 h-6 text-white hidden transition-transform duration-300" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <!-- Chat Window -->
+  <div 
+    id="video-chat-window"
+    class="absolute bottom-20 right-0 w-[400px] h-[300px] bg-black/90 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-white/10 opacity-0 scale-95 pointer-events-none transition-all duration-300 origin-bottom-right"
+  >
+    <div class="absolute top-0 left-0 right-0 h-10 bg-gradient-to-r from-purple-900/50 to-pink-900/50 flex items-center px-4 border-b border-white/10">
+      <span class="text-white/80 text-sm font-medium">Video Chat Assistant</span>
+      <div class="ml-auto flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        <span class="text-white/60 text-xs">Live</span>
+      </div>
+    </div>
+    <iframe 
+      src="https://embed.liveavatar.com/v1/313b1235-4557-49a4-b450-6d49aac1ec01" 
+      allow="microphone" 
+      title="LiveAvatar Embed" 
+      class="w-full h-full pt-10"
+      style="aspect-ratio: 16/9;"
+    ></iframe>
+  </div>
+</div>
+
+<style>
+  #video-chat-window.open {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+  
+  @media (max-width: 480px) {
+    #video-chat-window {
+      width: calc(100vw - 48px);
+      right: -12px;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('video-chat-toggle');
+  const window_ = document.getElementById('video-chat-window');
+  const chatIcon = document.getElementById('chat-icon');
+  const closeIcon = document.getElementById('close-icon');
+  
+  let isOpen = false;
+  
+  toggle?.addEventListener('click', () => {
+    isOpen = !isOpen;
+    
+    if (isOpen) {
+      window_?.classList.add('open');
+      chatIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    } else {
+      window_?.classList.remove('open');
+      chatIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  });
+  
+  // Close on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen) {
+      isOpen = false;
+      window_?.classList.remove('open');
+      chatIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  });
+</script>
